@@ -1,0 +1,12 @@
+[user]
+	name = Maksim Gayduk
+	email = maksim.gayduk@gmail.com
+
+[color]
+	ui = true
+
+[credential]
+	helper = cache 3600
+
+[core]
+    editor = vim
