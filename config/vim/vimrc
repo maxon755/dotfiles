@@ -1,0 +1,9 @@
+"Indent settings
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+syntax on
+
+"Hidden characters
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
