@@ -1,0 +1,15 @@
+\timing on
+\pset null ○
+
+-- Autocomplete keywords in uppercase
+\set COMP_KEYWORD_CASE upper
+
+-- Verbose error reports.
+-- \set VERBOSITY verbose
+
+-- Use a separate history file per-database.
+\set HISTFILE ~/.psql_history- :DBNAME
+
+-- Store commands once in history
+\set HISTCONTROL ignoredups
+
