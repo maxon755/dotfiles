@@ -26,6 +26,14 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-    map <C-n> :NERDTreeToggle<CR>
+Plug 'morhetz/gruvbox'
 
 call plug#end()
+
+"Appereance
+set t_Co=256
+set background=dark
+colorscheme gruvbox
+
+"Keys mapping
+map <C-n> :NERDTreeToggle<CR>
