@@ -1,9 +1,31 @@
 "Indent settings
+set autoindent
 set tabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
+
+set number
 syntax on
+
+"Search settings
+set hlsearch    "Highlight all search results
+set smartcase   "Enable smart-case search
+set ignorecase  "Always case-insensitive
+set incsearch   "Searches for strings incrementally
 
 "Hidden characters
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    map <C-n> :NERDTreeToggle<CR>
+
+call plug#end()
