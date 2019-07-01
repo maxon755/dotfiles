@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'morhetz/gruvbox'
+Plug '~/.fzf'
 
 call plug#end()
 
