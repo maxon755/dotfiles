@@ -5,6 +5,7 @@ set shiftwidth=4
 set smarttab
 set expandtab
 
+set ruler
 set number
 syntax on
 
@@ -15,8 +16,17 @@ set ignorecase  "Always case-insensitive
 set incsearch   "Searches for strings incrementally
 
 "Hidden characters
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:->,trail:~,extends:>,precedes:<,space:·
+set list
 
+"Vertical line
+if exists('+colorcolumn')
+    set colorcolumn=80
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+"Plugins management
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
       \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
