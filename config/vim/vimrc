@@ -5,9 +5,7 @@ set shiftwidth=4
 set smarttab
 set expandtab
 
-set ruler
-set number
-syntax on
+set autochdir
 
 "Search settings
 set hlsearch    "Highlight all search results
@@ -37,14 +35,47 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'morhetz/gruvbox'
-Plug '~/.fzf'
+Plug 'airblade/vim-gitgutter'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-surround'
+
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'w0rp/ale'
+Plug 'elzr/vim-json'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
+"NerdTree config
+:let g:NERDTreeWinSize=40
+let NERDTreeShowHidden=1
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * call s:turnNerdTree(argc())
+
+function! s:turnNerdTree(argc)
+    if a:argc == 0 && !exists("s:std_in")
+        NERDTree
+    endif
+endfunction
+
+
 "Appereance
+set ruler
+set number
+syntax on
 set t_Co=256
 set background=dark
 colorscheme gruvbox
 
 "Keys mapping
 map <C-n> :NERDTreeToggle<CR>
+map - ddp
+map _ ddkP
+
+imap <c-w> <esc>:w<cr>i
+imap <c-e> <esc>$i
+imap <c-z> <esc>ui
+
