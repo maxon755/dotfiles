@@ -14,7 +14,7 @@ set ignorecase  "Always case-insensitive
 set incsearch   "Searches for strings incrementally
 
 "Hidden characters
-set listchars=eol:$,tab:->,trail:~,extends:>,precedes:<,space:·
+set listchars=eol:$,tab:->,trail:~,extends:>,precedes:<,space:-
 set list
 
 "Vertical line
