@@ -5,6 +5,12 @@ NC='\033[0m'
 
 CONF_PATH=`git rev-parse --show-toplevel`/config
 
+# oh-my-zsh
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+ln -sf $CONF_PATH/zsh/zshrc $HOME/.zshrc
+
 # git
 ln -sf $CONF_PATH/git/gitconfig $HOME/.gitconfig
 
@@ -20,3 +26,4 @@ if [ ! -d "$HOME/.fzf" ]; then
 fi
 
 echo -e "${GREEN}The installation is finished${NC}"
+
