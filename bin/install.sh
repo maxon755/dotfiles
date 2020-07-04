@@ -20,6 +20,9 @@ ln -sf $CONF_PATH/vim/vimrc $HOME/.vimrc
 # psql
 ln -sf $CONF_PATH/psql/psqlrc $HOME/.psqlrc
 
+# mysql
+ln -sf $CONF_PATH/mysql/my.cnf $HOME/.my.cnf
+
 if [ ! -d "$HOME/.fzf" ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     $HOME/.fzf/install
