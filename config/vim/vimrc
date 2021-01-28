@@ -7,6 +7,8 @@ set expandtab
 
 set autochdir
 
+set backspace=indent,eol,start
+
 "Search settings
 set hlsearch    "Highlight all search results
 set smartcase   "Enable smart-case search
@@ -16,6 +18,9 @@ set incsearch   "Searches for strings incrementally
 "Hidden characters
 set listchars=eol:$,tab:->,trail:~,extends:>,precedes:<,space:-
 set list
+
+"Clipboard
+set clipboard=unnamed
 
 "Vertical line
 if exists('+colorcolumn')

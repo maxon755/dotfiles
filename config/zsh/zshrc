@@ -112,6 +112,12 @@ export EDITOR='vim'
 #setopt no_share_history
 
 alias composer-in-docker="docker run --rm -v $(pwd):/app composer"
+alias ssh-hosts="sed -rn \"s/^\s*Host\s+(.*)\s*/\1/ip\" ~/.ssh/config"
+alias ls="exa"
 
-export PATH=$HOME/.symfony/bin:$PATH
+PATH=$HOME/.symfony/bin:$PATH
+PATH=/opt/local/bin:$PATH
+PATH=$PATH:/usr/local/go/bin
+
+export GOROOT="/usr/local/go"
 
