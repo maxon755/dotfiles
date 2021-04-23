@@ -63,6 +63,8 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+#setopt no_share_history
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -75,10 +77,13 @@ plugins=(
     fzf
     npm
     sublime
+    zsh-completions
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # User configuration
 
@@ -108,12 +113,9 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#setopt no_share_history
 
 alias composer-in-docker="docker run --rm -v $(pwd):/app composer"
 alias ssh-hosts="sed -rn \"s/^\s*Host\s+(.*)\s*/\1/ip\" ~/.ssh/config"
-alias ls="exa"
 
 PATH=$HOME/.symfony/bin:$PATH
 PATH=/opt/local/bin:$PATH
