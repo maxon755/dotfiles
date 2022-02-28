@@ -78,8 +78,8 @@ plugins=(
     npm
     sublime
     zsh-completions
-    zsh-autosuggestions
     zsh-syntax-highlighting
+    colored-man-pages
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -116,6 +116,12 @@ export EDITOR='vim'
 
 alias composer-in-docker="docker run --rm -v $(pwd):/app composer"
 alias ssh-hosts="sed -rn \"s/^\s*Host\s+(.*)\s*/\1/ip\" ~/.ssh/config"
+alias dc="docker-compose"
+alias br="bin/run"
+
+alias g="git"
+alias gs="git status"
+alias gd="git diff"
 
 PATH=$HOME/.symfony/bin:$PATH
 PATH=/opt/local/bin:$PATH
@@ -123,3 +129,4 @@ PATH=$PATH:/usr/local/go/bin
 
 export GOROOT="/usr/local/go"
 
+source <(kubectl completion zsh)

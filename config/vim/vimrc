@@ -9,6 +9,8 @@ set autochdir
 
 set backspace=indent,eol,start
 
+set clipboard=unnamedplus
+
 "Search settings
 set hlsearch    "Highlight all search results
 set smartcase   "Enable smart-case search
